@@ -2,10 +2,15 @@ version: 0.0
 os: linux
 
 files:
-  - source: /dist/angular-frontend/
-    destination: /home/ec2-user/angular-frontend/
+  - source: s3://perimattic-task-cloudfront-s3/demo.zip
+    destination: /home/ec2-user/angular-frontend/demo.zip
 
 hooks:
+
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: root
 
   AfterInstall:
     - location: scripts/after_install.sh
