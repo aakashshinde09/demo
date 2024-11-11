@@ -17,4 +17,4 @@ phases:
 artifacts:
   files:
     - '**/*'  
-  base-directory: 'dist/demo'  
+  base-directory: 'dist/angular-frontend'  
