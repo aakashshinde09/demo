@@ -1,4 +1,5 @@
-cd /home/ec2-user/angular-frontend
+#!/bin/bash
+set -e
 
 npm install -g http-server
 
