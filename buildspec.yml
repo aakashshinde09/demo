@@ -13,7 +13,10 @@ phases:
   
   build:
     commands:
-      - ng build --configuration production
+      - mkdir -p dist/angular-frontend
+      - touch dist/angular-frontend/index.html
+      - echo "Hello this is for testing purpose" > dist/angular-frontend/index.html
+      # - ng build --configuration production
       - echo "Adding appspec.yml and scripts to build directory..."
       - cp appspec.yml dist/angular-frontend/  
       - cp -r scripts/ dist/angular-frontend/  
