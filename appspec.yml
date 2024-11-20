@@ -3,11 +3,16 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/html
+    destination: /home/ubuntu/code
 hooks:
 
-  AfterInstall:
+  BeforeInstall:
     - location: scripts/before.sh
+      timeout: 300
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/start.sh
       timeout: 300
       runas: root
 
